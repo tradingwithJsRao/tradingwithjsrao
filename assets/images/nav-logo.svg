@@ -1,0 +1,8 @@
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Circle -->
+  <circle cx="40" cy="50" r="30" fill="white" stroke="black" stroke-width="2"/>
+  <!-- JS Text inside Circle -->
+  <text x="30" y="55" font-size="24" font-family="Arial" fill="black" font-weight="bold">JS</text>
+  <!-- Rao Text Outside Circle -->
+  <text x="90" y="55" font-size="24" font-family="Arial" fill="white" font-weight="bold">Rao</text>
+</svg>

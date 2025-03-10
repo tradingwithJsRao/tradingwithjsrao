@@ -1,0 +1,373 @@
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode header {
+  background-color: #343a40;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Pricing Plans Section */
+.pricing-plans {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #0056b3;
+}
+
+.tab.active {
+  background-color: #0056b3;
+}
+
+.tab-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.plan-container {
+  display: none;
+  width: 100%;
+}
+
+.plan-container.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.plan {
+  border: 1px solid #dee2e6;
+  padding: 20px;
+  text-align: left;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 30%; /* Adjust width for 3 plans per row */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  flex-basis: 30%; /* Key for flexbox responsiveness */
+}
+
+.dark-mode .plan {
+  background-color: #343a40;
+  border-color: #6c757d;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.plan:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.plan:hover::before {
+  opacity: 1;
+}
+
+.plan h3 {
+  margin-top: 0;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .plan h3 {
+  color: #ced4da;
+}
+
+.plan ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+.plan ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+.plan ul li::before {
+  content: '\f00c'; /* Font Awesome checkmark */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #28a745;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Additional Styles (Footer, etc.) */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.additional-plans,
+.psychometric-test {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.theme-switch {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#dark-mode-toggle {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* ... (Your existing CSS) ... */
+/* sstyle.css */
+/* ... (General styles, header, nav, pricing-plans, tabs, plan styles - same as before) */
+
+/* Animated & Responsive Pop-up Styles */
+.popup {
+  display: none;
+  position: fixed;
+ 
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  border: 1px solid #888;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8); /* Start smaller */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+}
+
+.dark-mode .popup {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #6c757d;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.popup.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Scale up to normal size */
+}
+
+.popup-content {
+  text-align: left;
+  animation: fadeIn 0.5s ease-in-out; /* Fade-in animation for content */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+.popup p {
+  margin-bottom: 10px;
+  animation: slideInFromBottom 0.5s ease-in-out; /* Slide-in animation for paragraphs */
+}
+
+@keyframes slideInFromBottom {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.popup ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+  animation: slideInFromBottom 0.6s ease-in-out; /* Slightly delayed slide-in */
+}
+
+.popup li {
+  margin-bottom: 5px;
+  animation: slideInFromBottom 0.7s ease-in-out; /* Further delayed slide-in */
+}
+
+.popup .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  background: none;
+  border: none;
+  transition: color 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out; /* Fade-in for close button */
+}
+
+.popup .close-button:hover {
+  color: #333;
+}
+
+.dark-mode .popup .close-button {
+  color: #ced4da;
+}
+
+.dark-mode .popup .close-button:hover {
+  color: #f8f9fa;
+}
+
+/* Highlighted Text */
+.highlight {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.dark-mode .highlight {
+  color: #66b3ff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .popup {
+      width: 95%;
+      max-width: 500px;
+  }
+
+  .plan {
+      width: 100%;
+      flex-basis: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .plan {
+      width: 45%;
+      flex-basis: 45%;
+  }
+}
