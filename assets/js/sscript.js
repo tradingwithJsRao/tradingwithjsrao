@@ -12,6 +12,41 @@ tabs.forEach(tab => {
         document.getElementById(tabId).classList.add('active');
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const tabContents = document.querySelectorAll('.tab-content');
+  
+    tabContents.forEach(tabContent => {
+      const planContainer = tabContent.querySelector('.plan-container');
+      const plans = tabContent.querySelectorAll('.plan');
+      const planWidth = plans[0].offsetWidth + 20; // Include margin
+  
+      const leftArrow = document.createElement('button');
+      leftArrow.classList.add('slide-arrow', 'left');
+      leftArrow.innerHTML = '&lt;';
+      tabContent.appendChild(leftArrow);
+  
+      const rightArrow = document.createElement('button');
+      rightArrow.classList.add('slide-arrow', 'right');
+      rightArrow.innerHTML = '&gt;';
+      tabContent.appendChild(rightArrow);
+  
+      let scrollPosition = 0;
+  
+      rightArrow.addEventListener('click', function() {
+        if (scrollPosition < (plans.length - 1) * planWidth) {
+          scrollPosition += planWidth;
+          planContainer.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+      });
+  
+      leftArrow.addEventListener('click', function() {
+        if (scrollPosition > 0) {
+          scrollPosition -= planWidth;
+          planContainer.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+      });
+    });
+  });
 
 // Dark Mode toggle
 darkModeToggle.addEventListener('click', () => {
