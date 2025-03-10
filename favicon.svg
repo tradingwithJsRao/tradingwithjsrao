@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pink Circle -->
+  <circle cx="100" cy="100" r="90" fill="#FF1493"/>
+
+  <!-- White "JS" Text in a Stylish Font, Bigger Size -->
+  <text x="50%" y="58%" font-family="Brush Script MT, cursive" font-size="100" fill="white" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
+    JS
+  </text>
+</svg>
