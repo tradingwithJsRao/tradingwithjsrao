@@ -1,447 +1,269 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 body.dark-mode {
-  background-color: #212529;
-  color: #f8f9fa;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.theme-switch button {
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.theme-switch button:hover {
+    background-color: #555; /* Slightly lighter background on hover */
 }
-
-header {
-  background-color: #007bff;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
+/* Header Styling */
 body.dark-mode header {
-  background-color: #343a40;
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+body.dark-mode header h1 {
+    color: #bb86fc;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-nav li {
-  margin: 0 1rem;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Pricing Plans Section */
-.pricing-plans {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.tabs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.tab {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 0 5px;
-  transition: background-color 0.3s ease;
-}
-
-.tab:hover {
-  background-color: #0056b3;
-}
-
-.tab.active {
-  background-color: #0056b3;
-}
-
-/* .tab-content-wrapper {
-  position: relative;
-} */
-.tab-content-wrapper {
-  position: relative;
-  overflow: visible;
-}
-/* 
-.tab-content {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 20px;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 50px;
-}
-
-.plan-container {
-  display: inline-flex;
-  transition: transform 0.5s ease;
-  margin-left: auto; /* Add margin-left: auto; */
-
-  .tab-content {
-    overflow-x: auto; /* Use auto instead of hidden */
-    white-space: nowrap;
-    padding-bottom: 20px;
-    -webkit-overflow-scrolling: touch;
+body.dark-mode header nav ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
+body.dark-mode header nav ul li {
+    margin: 0 15px;
+}
+
+body.dark-mode header nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode header nav ul li a:hover {
+    color: #6200ee;
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+body.dark-mode a:hover {
+    color: #6200ee;
+}
+
+body.dark-mode .plan {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .slide-arrow {
+    background-color: #3700b3;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+body.dark-mode .slide-arrow:hover {
+    background-color: #6200ee;
+}
+
+/* Service Heading Styles */
+.service-heading {
+    text-align: center;
+    margin: 30px 0 20px;
+    color: #bb86fc;
+    font-size: 1.8em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.service-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #6200ee;
+}
+
+/* Plan Styles */
 .plan-container {
-  display: inline-flex;
-  transition: transform 0.5s ease;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding: 20px;
+    position: relative; /* Needed for slide arrow positioning */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.plan-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .plan {
-  /* Make each plan take full width of tab-content */
-  margin: 0 10px; /* Remove margins between plans */
-}
-
-/* Arrow Styles */
-.slide-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
-
-.slide-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.slide-arrow.left {
-    left: 0; /* Position at the edge of wrapper */
-    transform: translate(-100%, -50%); /* Move fully outside */
-}
-
-.slide-arrow.right {
-    right: 0; /* Position at the edge of wrapper */
-    transform: translate(100%, -50%); /* Move fully outside */
-}
-
-/* .plan {
-  border: 1px solid #dee2e6;
-  padding: 15px;
-  text-align: left;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  width: 300px; /* Fixed width for consistent size */
-  /* margin: 0 10px; /* Space between plans */
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  font-size: 14px;
-  display: inline-block; /* Ensure they are inline for horizontal layout */
-/* } */  
-
-.dark-mode .plan {
-  background-color: #343a40;
-  border-color: #6c757d;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-.plan:hover {
-  transform: translateY(-8px) rotateX(5deg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.plan::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.plan:hover::before {
-  opacity: 1;
+    flex: 0 0 300px;
+    padding: 20px;
+    border-radius: 8px;
+    scroll-snap-align: start;
 }
 
 .plan h3 {
-  margin-top: 0;
-  color: #007bff;
-  transition: color 0.3s ease;
+    margin-bottom: 10px;
+    color: #bb86fc;
 }
 
-.dark-mode .plan h3 {
-  color: #ced4da;
+.plan p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .plan ul {
-  list-style: none;
-  padding-left: 30px;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
 }
 
-.plan ul li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
+.plan li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.9em;
 }
 
-.plan ul li::before {
-  content: '\f00c'; /* Font Awesome checkmark */
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: #28a745;
+.plan li i {
+    margin-right: 8px;
+    color: #6200ee;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.plan .btn {
+    background-color: #6200ee;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+.plan .btn:hover {
+    background-color: #3700b3;
 }
 
-/* Additional Styles (Footer, etc.) */
-footer {
-  background-color: #333;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
+/* Sliding Arrow Styles */
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #3700b3;
+    color: #e0e0e0;
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.slide-arrow:hover {
+    background-color: #6200ee;
 }
 
-.contact-info p {
-  margin: 5px 0;
+.slide-arrow.left {
+    left: 10px;
 }
 
-.contact-info a {
-  color: white;
-  text-decoration: none;
+.slide-arrow.right {
+    right: 10px;
 }
 
-.additional-plans,
-.psychometric-test {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.theme-switch {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-
-#dark-mode-toggle {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-/* ... (Your existing CSS) ... */
-/* sstyle.css */
-/* ... (General styles, header, nav, pricing-plans, tabs, plan styles - same as before) */
-
-/* Animated & Responsive Pop-up Styles */
+/* Popup Styles */
 .popup {
-  display: none;
-  position: fixed;
- 
-  z-index: 1000;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 600px;
-  background-color: #fff;
-  border: 1px solid #888;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.8); /* Start smaller */
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
-}
-
-.dark-mode .popup {
-  background-color: #343a40;
-  color: #f8f9fa;
-  border-color: #6c757d;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .popup.show {
-  display: block;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* Scale up to normal size */
+    display: flex;
 }
 
 .popup-content {
-  text-align: left;
-  animation: fadeIn 0.5s ease-in-out; /* Fade-in animation for content */
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-
-  to {
-      opacity: 1;
-  }
-}
-
-.popup p {
-  margin-bottom: 10px;
-  animation: slideInFromBottom 0.5s ease-in-out; /* Slide-in animation for paragraphs */
-}
-
-@keyframes slideInFromBottom {
-  from {
-      transform: translateY(20px);
-      opacity: 0;
-  }
-
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-.popup ol {
-  padding-left: 20px;
-  margin-bottom: 10px;
-  animation: slideInFromBottom 0.6s ease-in-out; /* Slightly delayed slide-in */
-}
-
-.popup li {
-  margin-bottom: 5px;
-  animation: slideInFromBottom 0.7s ease-in-out; /* Further delayed slide-in */
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
 }
 
 .popup .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  color: #888;
-  background: none;
-  border: none;
-  transition: color 0.3s ease;
-  animation: fadeIn 0.4s ease-in-out; /* Fade-in for close button */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #e0e0e0;
+    cursor: pointer;
 }
 
-.popup .close-button:hover {
-  color: #333;
-}
-
-.dark-mode .popup .close-button {
-  color: #ced4da;
-}
-
-.dark-mode .popup .close-button:hover {
-  color: #f8f9fa;
-}
-
-/* Highlighted Text */
-.highlight {
-  font-weight: bold;
-  color: #007bff;
-}
-
-.dark-mode .highlight {
-  color: #66b3ff;
-}
-
-/* Media Queries */
+/* Responsiveness */
 @media (max-width: 768px) {
-  .popup {
-      width: 95%;
-      max-width: 500px;
-  }
+    .plan-container {
+        padding: 10px;
+    }
 
-  .plan {
-      width: 100%;
-      flex-basis: 100%;
-  }
-}
-@media (max-width: 1200px) {
-  .plan {
-      width: 45%;
-      flex-basis: 45%;
-  }
-}
+    .plan {
+        flex: 0 0 90%;
+    }
 
-@media (max-width: 768px) {
-  .plan {
-      width: 48%;  /* Adjust width to fit 2 plans per row */
-      flex-basis: 48%;
-  }
-}
-
-@media (max-width: 500px) {
-  .plan {
-      width: 100%;
-      flex-basis: 100%; /* 1 plan per row for very small screens */
-  }
-}
-@media (max-width: 768px) {
-  .popup {
-    width: 95%;
-    max-width: 500px;
-  }
+    /* Show Stocks plan in mobile view */
+   
 }
