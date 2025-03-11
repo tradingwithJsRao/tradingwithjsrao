@@ -12,47 +12,50 @@ tabs.forEach(tab => {
         document.getElementById(tabId).classList.add('active');
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
     const tabContents = document.querySelectorAll('.tab-content');
-  
+
     tabContents.forEach(tabContent => {
-      const planContainer = tabContent.querySelector('.plan-container');
-      const plans = tabContent.querySelectorAll('.plan');
-      const planWidth = plans[0].offsetWidth + 20; // Include margin
-  
-      const leftArrow = document.createElement('button');
-      leftArrow.classList.add('slide-arrow', 'left');
-      leftArrow.innerHTML = '&lt;';
-      tabContent.appendChild(leftArrow);
-  
-      const rightArrow = document.createElement('button');
-      rightArrow.classList.add('slide-arrow', 'right');
-      rightArrow.innerHTML = '&gt;';
-      tabContent.appendChild(rightArrow);
-  
-      let scrollPosition = 0;
-  
-      rightArrow.addEventListener('click', function() {
-        if (scrollPosition < (plans.length - 1) * planWidth) {
-          scrollPosition += planWidth;
-          planContainer.style.transform = `translateX(-${scrollPosition}px)`;
-        }
-      });
-  
-      leftArrow.addEventListener('click', function() {
-        if (scrollPosition > 0) {
-          scrollPosition -= planWidth;
-          planContainer.style.transform = `translateX(-${scrollPosition}px)`;
-        }
-      });
+        const planContainer = tabContent.querySelector('.plan-container');
+        const plans = tabContent.querySelectorAll('.plan');
+        const planWidth = plans[0].offsetWidth + 20; // Include margin (10px on each side)
+
+        // Create and append left arrow
+        const leftArrow = document.createElement('button');
+        leftArrow.classList.add('slide-arrow', 'left');
+        leftArrow.innerHTML = '&lt;';
+        tabContent.parentElement.appendChild(leftArrow);
+
+        // Create and append right arrow
+        const rightArrow = document.createElement('button');
+        rightArrow.classList.add('slide-arrow', 'right');
+        rightArrow.innerHTML = '&gt;';
+        tabContent.parentElement.appendChild(rightArrow);
+
+        let scrollPosition = 0;
+
+        rightArrow.addEventListener('click', function () {
+            if (scrollPosition < (plans.length - 1) * planWidth) {
+                scrollPosition += planWidth;
+                planContainer.style.transform = `translateX(-${scrollPosition}px)`;
+            }
+        });
+
+        leftArrow.addEventListener('click', function () {
+            if (scrollPosition > 0) {
+                scrollPosition -= planWidth;
+                planContainer.style.transform = `translateX(-${scrollPosition}px)`;
+            }
+        });
     });
-  });
+});
 
 // Dark Mode toggle
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
-}); 
+});
 
 function createPlanElement(plan) {
     const planDiv = document.createElement('div');
@@ -71,6 +74,7 @@ function createPlanElement(plan) {
     const chooseButton = planDiv.querySelector('.btn');
 
     chooseButton.addEventListener('click', () => {
+        // Create popup element (same as before)
         const popup = document.createElement('div');
         popup.classList.add('popup');
         popup.innerHTML = `
@@ -78,8 +82,8 @@ function createPlanElement(plan) {
             <div class="popup-content">
                 <h3> Bank Details </h3>
                 <p><strong>IBAN NO:</strong> PK10FAYS3206301000001734<br>
-                 <b>Bank Name: </b> FAYSAL BANK LTD <br> 
-                 <b>Account Title: </b>JANSHERKHAN </p>
+                   <b>Bank Name: </b> FAYSAL BANK LTD <br> 
+                   <b>Account Title: </b>JANSHERKHAN </p>
                 <h3>USDT TRC-20 Address:</h3>
                 <p><code>TLoLeNJumnEZd5ubqv4D8qJvxQomfeR2Bu</code></p>
                 <h3>Binance ID: <code>458260839</code> (js-rao)</h3>
@@ -102,24 +106,24 @@ function createPlanElement(plan) {
         document.body.appendChild(popup);
         popup.classList.add('show');
 
+        // Close button functionality (same as before)
         const closeButton = popup.querySelector('.close-button');
         closeButton.addEventListener('click', () => {
             popup.classList.remove('show');
             setTimeout(() => {
                 popup.remove();
-            }, 300); // Match transition duration (0.3s) in CSS
+            }, 300);
         });
 
-        // Close popup if clicked outside (improved)
+        // Close popup if clicked outside (same as before)
         popup.addEventListener('click', (event) => {
-            if (event.target === popup) { // Check if click is on the backdrop
+            if (event.target === popup) {
                 popup.classList.remove('show');
                 setTimeout(() => {
                     popup.remove();
                 }, 300);
             }
         });
-
     });
 
     return planDiv;
@@ -132,22 +136,10 @@ const planData = {
         { title: "Premium Plan Standard", price: "$180/6months", features: ["Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"] },
         { title: "Premium Plan Standard", price: "$300/Yearly", features: ["Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"], featured: true },
         { title: "Premium Plan Standard", price: "$500/Lifetime", features: ["Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"] },
-        { title: "Premium Plus Plan", price: "$500/Yearly", features: ["1 to 1 Live Trade","Complete access to Personal Inbox","Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"] },
-        { title: "Pro Premium Plus Plan", price: "$700/Lifetime", features: ["1 to 1 Live Trade","Live Full Crypto Course","Complete access to Personal Inbox", "Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"] }
-    
+        { title: "Premium Plus Plan", price: "$500/Yearly", features: ["1 to 1 Live Trade", "Complete access to Personal Inbox", "Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"] },
+        { title: "Pro Premium Plus Plan", price: "$700/Lifetime", features: ["1 to 1 Live Trade", "Live Full Crypto Course", "Complete access to Personal Inbox", "Scalps", "1 user", "Whatsapp Group support", "Intra-day and Swing Trades", "Portfolio Management", "Premium Support by JS Team"] }
+
     ]
-    // forex: [
-    //     { title: "Forex Basic", price: "$50/month", features: ["Forex Signals", "Daily Market Analysis", "24/7 Support"] },
-    //     { title: "Forex Premium", price: "$150/quarter", features: ["Advanced Forex Signals", "In-depth Market Analysis", "Dedicated Account Manager"] }
-    // ],
-    // commodities: [
-    //     { title: "Commodity Basic", price: "$75/month", features: ["Commodity Insights", "Trading Strategies", "Risk Management"] },
-    //     { title: "Commodity Pro", price: "$200/quarter", features: ["Expert Commodity Analysis", "Personalized Trading Plans", "Exclusive Webinars"] }
-    // ],
-    // stocks: [
-    //     { title: "Stock Starter", price: "$25/month", features: ["Stock Picks", "Market Updates", "Beginner Resources"] },
-    //     { title: "Stock Trader", price: "$100/quarter", features: ["Advanced Stock Analysis", "Portfolio Building", "Direct Access to Analysts"] }
-    // ]
 };
 
 // Append plans to their respective containers (No changes needed)
