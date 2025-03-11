@@ -79,18 +79,47 @@ nav a {
 .tab.active {
   background-color: #0056b3;
 }
+
+/* .tab-content-wrapper {
+  position: relative;
+} */
+.tab-content-wrapper {
+  position: relative;
+  overflow: visible;
+}
+/* 
 .tab-content {
-  position: relative; /* Needed for arrow positioning */
   overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 20px;
   -webkit-overflow-scrolling: touch;
+  padding: 0 50px;
+}
+
+.plan-container {
+  display: inline-flex;
+  transition: transform 0.5s ease;
+  margin-left: auto; /* Add margin-left: auto; */
+
+  .tab-content {
+    overflow-x: auto; /* Use auto instead of hidden */
+    white-space: nowrap;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
 }
 
 .plan-container {
   display: inline-flex;
   transition: transform 0.5s ease;
 }
+
+.plan {
+  /* Make each plan take full width of tab-content */
+  margin: 0 10px; /* Remove margins between plans */
+}
+
+/* Arrow Styles */
 .slide-arrow {
   position: absolute;
   top: 50%;
@@ -115,14 +144,16 @@ nav a {
 }
 
 .slide-arrow.left {
-  left: 10px;
+    left: 0; /* Position at the edge of wrapper */
+    transform: translate(-100%, -50%); /* Move fully outside */
 }
 
 .slide-arrow.right {
-  right: 10px;
+    right: 0; /* Position at the edge of wrapper */
+    transform: translate(100%, -50%); /* Move fully outside */
 }
 
-.plan {
+/* .plan {
   border: 1px solid #dee2e6;
   padding: 15px;
   text-align: left;
@@ -130,13 +161,13 @@ nav a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   width: 300px; /* Fixed width for consistent size */
-  margin: 0 10px; /* Space between plans */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* margin: 0 10px; /* Space between plans */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
   font-size: 14px;
   display: inline-block; /* Ensure they are inline for horizontal layout */
-}
+/* } */  
 
 .dark-mode .plan {
   background-color: #343a40;
