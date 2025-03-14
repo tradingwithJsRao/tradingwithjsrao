@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const expandTrigger = document.querySelector('.expand-trigger');
+    const expandableContent = document.getElementById('expandable-content');
 
     // Dark Mode toggle
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    });
+
+    // Expand/Collapse
+    expandTrigger.addEventListener('click', function () {
+        expandableContent.classList.toggle('expanded');
     });
 
     function createPlanElement(plan) {
@@ -152,55 +159,82 @@ document.addEventListener('DOMContentLoaded', function () {
         ],
         forex: [
             {
-                title: "Forex Basic", price: "Coming Soon", features: [
-                    { text: "Daily Signals", icon: "fa fa-signal" },
-                    { text: "Market Analysis", icon: "fa fa-chart-area" },
-                    { text: "Risk Management", icon: "fa fa-shield-alt" },
-                    { text: "Community Support", icon: "fa fa-users" }
+                title: "Premium Plus Plan", price: "$1000/Yearly", features: [
+                    { text: "1-on-1 Live Trade", icon: "fa fa-video" },
+                    { text: "Personal Inbox Access", icon: "fa fa-inbox" },
+                    { text: "Scalps", icon: "fa fa-chart-line" },
+                    { text: "1 user", icon: "fa fa-user" },
+                    { text: "Whatsapp Group support", icon: "fa fa-whatsapp" },
+                    { text: "Intra-day & Swing Trades", icon: "fa fa-exchange-alt" },
+                    { text: "Portfolio Management", icon: "fa fa-briefcase" },
+                    { text: "Premium JS Team Support", icon: "fa fa-headset" }
                 ]
             },
             {
-                title: "Forex Advanced", price: "Coming Soon", features: [
-                    { text: "Daily Signals", icon: "fa fa-signal" },
-                    { text: "Detailed Analysis", icon: "fa fa-chart-area" },
-                    { text: "Advanced Risk Tools", icon: "fa fa-shield-alt" },
-                    { text: "1-on-1 Mentorship", icon: "fa fa-user-graduate" }
+                title: "Pro Premium Plus Plan", price: "$2500/Lifetime", features: [
+                    { text: "1-on-1 Live Trade", icon: "fa fa-video" },
+                    { text: "Live Crypto Course", icon: "fa fa-graduation-cap" },
+                    { text: "Personal Inbox Access", icon: "fa fa-inbox" },
+                    { text: "Scalps", icon: "fa fa-chart-line" },
+                    { text: "1 user", icon: "fa fa-user" },
+                    { text: "Whatsapp Group support", icon: "fa fa-whatsapp" },
+                    { text: "Intra-day & Swing Trades", icon: "fa fa-exchange-alt" },
+                    { text: "Portfolio Management", icon: "fa fa-briefcase" },
+                    { text: "Premium JS Team Support", icon: "fa fa-headset" }
                 ]
             }
         ],
         commodities: [
             {
-                title: "Commodities Basic", price: "Coming Soon", features: [
-                    { text: "Gold & Oil Signals", icon: "fa fa-oil-can" },
-                    { text: "Market Updates", icon: "fa fa-newspaper" },
-                    { text: "Basic Strategies", icon: "fa fa-lightbulb" },
-                    { text: "Community Access", icon: "fa fa-comments" }
+                title: "Premium Plus Plan", price: "$1000/Yearly", features: [
+                    { text: "1-on-1 Live Trade", icon: "fa fa-video" },
+                    { text: "Personal Inbox Access", icon: "fa fa-inbox" },
+                    { text: "Scalps", icon: "fa fa-chart-line" },
+                    { text: "1 user", icon: "fa fa-user" },
+                    { text: "Whatsapp Group support", icon: "fa fa-whatsapp" },
+                    { text: "Intra-day & Swing Trades", icon: "fa fa-exchange-alt" },
+                    { text: "Portfolio Management", icon: "fa fa-briefcase" },
+                    { text: "Premium JS Team Support", icon: "fa fa-headset" }
                 ]
             },
             {
-                title: "Commodities Pro", price: "Coming Soon", features: [
-                    { text: "Advanced Signals", icon: "fa fa-signal" },
-                    { text: "In-depth Analysis", icon: "fa fa-chart-pie" },
-                    { text: "Custom Strategies", icon: "fa fa-cogs" },
-                    { text: "Live Webinars", icon: "fa fa-video" }
+                title: "Pro Premium Plus Plan", price: "$2500/Lifetime", features: [
+                    { text: "1-on-1 Live Trade", icon: "fa fa-video" },
+                    { text: "Live Crypto Course", icon: "fa fa-graduation-cap" },
+                    { text: "Personal Inbox Access", icon: "fa fa-inbox" },
+                    { text: "Scalps", icon: "fa fa-chart-line" },
+                    { text: "1 user", icon: "fa fa-user" },
+                    { text: "Whatsapp Group support", icon: "fa fa-whatsapp" },
+                    { text: "Intra-day & Swing Trades", icon: "fa fa-exchange-alt" },
+                    { text: "Portfolio Management", icon: "fa fa-briefcase" },
+                    { text: "Premium JS Team Support", icon: "fa fa-headset" }
                 ]
             }
         ],
         stocks: [
             {
-                title: "Stocks Basic", price: "Coming Soon", features: [
-                    { text: "Stock Picks", icon: "fa fa-chart-line" },
-                    { text: "Market News", icon: "fa fa-newspaper" },
-                    { text: "Basic Analysis", icon: "fa fa-search-dollar" },
-                    { text: "Community Forum", icon: "fa fa-comments" }
+                title: "Premium Plus Plan", price: "$1000/Yearly", features: [
+                    { text: "1-on-1 Live Trade", icon: "fa fa-video" },
+                    { text: "Personal Inbox Access", icon: "fa fa-inbox" },
+                    { text: "Scalps", icon: "fa fa-chart-line" },
+                    { text: "1 user", icon: "fa fa-user" },
+                    { text: "Whatsapp Group support", icon: "fa fa-whatsapp" },
+                    { text: "Intra-day & Swing Trades", icon: "fa fa-exchange-alt" },
+                    { text: "Portfolio Management", icon: "fa fa-briefcase" },
+                    { text: "Premium JS Team Support", icon: "fa fa-headset" }
                 ]
             },
             {
-                title: "Stocks Premium", price: "Coming Soon", features: [
-                    { text: "Advanced Picks", icon: "fa fa-arrow-up" },
-                    { text: "Detailed Reports", icon: "fa fa-file-alt" },
-                    { text: "Portfolio Review", icon: "fa fa-briefcase" },
-                    { text: "Exclusive Access", icon: "fa fa-crown" }
+                title: "Pro Premium Plus Plan", price: "$2500/Lifetime", features: [
+                    { text: "1-on-1 Live Trade", icon: "fa fa-video" },
+                    { text: "Live Crypto Course", icon: "fa fa-graduation-cap" },
+                    { text: "Personal Inbox Access", icon: "fa fa-inbox" },
+                    { text: "Scalps", icon: "fa fa-chart-line" },
+                    { text: "1 user", icon: "fa fa-user" },
+                    { text: "Whatsapp Group support", icon: "fa fa-whatsapp" },
+                    { text: "Intra-day & Swing Trades", icon: "fa fa-exchange-alt" },
+                    { text: "Portfolio Management", icon: "fa fa-briefcase" },
+                    { text: "Premium JS Team Support", icon: "fa fa-headset" }
                 ]
             }
         ]
@@ -217,7 +251,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Calculate planWidth after adding the plans to the container
         const plans = container.querySelectorAll('.plan');
         if (plans.length > 0) {
-            let planWidth = plans[0].offsetWidth + parseInt(window.getComputedStyle(plans[0]).marginRight) + parseInt(window.getComputedStyle(plans[0]).marginLeft);
+            let planWidth = plans[0].offsetWidth +
+                parseInt(window.getComputedStyle(plans[0]).marginRight) +
+                parseInt(window.getComputedStyle(plans[0]).marginLeft);
 
             // Associate arrows with the correct plan container
             const plansWrapper = container.closest('.plans-wrapper');
