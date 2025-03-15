@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 title: "Pro Premium Plus Plan", price: "$2500/Lifetime", features: [
                     { text: "1-on-1 Live Trade", icon: "fa fa-video" },
-                    { text: "Live Crypto Course", icon: "fa fa-graduation-cap" },
+                    { text: "Financial Markets Live Courses (Forex + Stock + Commodities + Crypto)", icon: "fa fa-graduation-cap" },
                     { text: "Personal Inbox Access", icon: "fa fa-inbox" },
                     { text: "Scalps", icon: "fa fa-chart-line" },
                     { text: "1 user", icon: "fa fa-user" },
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 title: "Pro Premium Plus Plan", price: "$2500/Lifetime", features: [
                     { text: "1-on-1 Live Trade", icon: "fa fa-video" },
-                    { text: "Live Crypto Course", icon: "fa fa-graduation-cap" },
+                    { text: "Financial Markets Live Courses (Forex + Stock + Commodities + Crypto)", icon: "fa fa-graduation-cap" },
                     { text: "Personal Inbox Access", icon: "fa fa-inbox" },
                     { text: "Scalps", icon: "fa fa-chart-line" },
                     { text: "1 user", icon: "fa fa-user" },
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 title: "Pro Premium Plus Plan", price: "$2500/Lifetime", features: [
                     { text: "1-on-1 Live Trade", icon: "fa fa-video" },
-                    { text: "Live Crypto Course", icon: "fa fa-graduation-cap" },
+                    { text: "Financial Markets Live Courses (Forex + Stock + Commodities + Crypto)", icon: "fa fa-graduation-cap" },
                     { text: "Personal Inbox Access", icon: "fa fa-inbox" },
                     { text: "Scalps", icon: "fa fa-chart-line" },
                     { text: "1 user", icon: "fa fa-user" },
