@@ -10,6 +10,33 @@ const addEventOnElements = function (elements, eventType, callback) {
   }
 }
 
+//popup
+
+document.addEventListener('DOMContentLoaded', function() {
+  const popup = document.getElementById('popup');
+  const closeButton = document.getElementById('closePopup');
+
+  setTimeout(function() {
+    popup.style.display = 'flex'; // Show the popup
+    setTimeout(function(){
+        closeButton.classList.add('show');
+
+    },5000); // show close button after 5sec
+  }, 5000); // Show popup after 5 seconds
+
+  closeButton.addEventListener('click', function() {
+    popup.style.display = 'none'; // Hide the popup
+  });
+
+  // Close popup if clicked outside the content
+  window.addEventListener('click', function(event) {
+    if (event.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+
+});
+
 // Toggle functions 
 
 

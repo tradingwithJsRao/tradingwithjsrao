@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </ol>
                     <ul>
                         <h3><strong>Note:</strong></h3>
-                        <li>After payment send screenshot with your name on Below.</li>
+                        <li>After payment send screenshot with your name and Email address on Below.</li>
                         <li><b>Whatsapp No:</b> +92 337 7841111 <b>Gmail:</b> raojansher04@gmail.com</li>
                         <li> You will be shortly to the group after passing the Psychometric Test.</li>
                     </ul>
@@ -92,6 +92,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const planData = {
         crypto: [
             {
+            title: "Crypto Crash Course",
+                price: "$250",
+                features: [
+                  { "text": "Complete Fundamentals Learning", "icon": "fa fa-book" },
+                  { "text": "Complete Technical Analysis Learning", "icon": "fa fa-chart-area" },
+                  { "text": "Complete Onchain Analysis Learning", "icon": "fa fa-database" },
+                  { "text": "Mentorship with One-on-One Chat Support", "icon": "fa fa-comments" },
+                  { "text": "Live Classes on Zoom/Meet", "icon": "fa fa-video" },
+                  { "text": "Portfolio Management Strategies", "icon": "fa fa-briefcase" },
+                  { "text": "Access to Recorded Sessions", "icon": "fa fa-history" }
+                ]
+              }, {
                 title: "Premium Plan Standard", price: "$100/3months", features: [
                     { text: "Scalps", icon: "fa fa-chart-line" },
                     { text: "1 user", icon: "fa fa-user" },
