@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         closeButton.classList.add('show');
 
     },5000); // show close button after 5sec
-  }, 5000); // Show popup after 5 seconds
+  }, 30000); // Show popup after 5 seconds
 
   closeButton.addEventListener('click', function() {
     popup.style.display = 'none'; // Hide the popup
