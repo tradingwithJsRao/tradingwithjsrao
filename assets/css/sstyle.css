@@ -4,32 +4,29 @@ body.dark-mode {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .theme-switch button {
-    background-color: #333; /* Dark background color */
-    color: white; /* White text color */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Add some padding */
-    border-radius: 20px; /* Rounded corners */
-    font-size: 16px; /* Adjust font size */
-    cursor: pointer; /* Indicate it's clickable */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.theme-switch button:hover {
+    background-color: #555;
 }
 
-.theme-switch button:hover {
-    background-color: #555; /* Slightly lighter background on hover */
-}
-/* Header Styling */
 body.dark-mode header {
     background-color: #1e1e1e;
     padding: 20px 0;
     text-align: center;
 }
-
 body.dark-mode header h1 {
     color: #bb86fc;
     font-size: 2.5em;
     margin-bottom: 10px;
 }
-
 body.dark-mode header nav ul {
     list-style: none;
     padding: 0;
@@ -37,18 +34,15 @@ body.dark-mode header nav ul {
     display: flex;
     justify-content: center;
 }
-
 body.dark-mode header nav ul li {
     margin: 0 15px;
 }
-
 body.dark-mode header nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
-
 body.dark-mode header nav ul li a:hover {
     color: #6200ee;
 }
@@ -64,7 +58,6 @@ body.dark-mode a {
     color: #bb86fc;
     text-decoration: none;
 }
-
 body.dark-mode a:hover {
     color: #6200ee;
 }
@@ -75,7 +68,6 @@ body.dark-mode .plan {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 body.dark-mode .plan:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
@@ -92,7 +84,6 @@ body.dark-mode .slide-arrow {
     cursor: pointer;
     z-index: 1;
 }
-
 body.dark-mode .slide-arrow:hover {
     background-color: #6200ee;
 }
@@ -102,7 +93,6 @@ body.dark-mode .slide-arrow:hover {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
-
 #expandable-content.expanded {
     max-height: 1000px;
 }
@@ -111,18 +101,16 @@ body.dark-mode .slide-arrow:hover {
     cursor: pointer;
     color: #bb86fc;
     text-decoration: underline;
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Added transitions */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
-
 .expand-trigger:hover {
-    color: #6200ee; /* Change color on hover */
-    text-decoration: none; /* Remove underline on hover, or change to something else */
+    color: #6200ee;
+    text-decoration: none;
+}
+.expand-trigger:active {
+    color: #3700b3;
 }
 
-.expand-trigger:active { /* Optional: Add active state effect */
-    color: #3700b3; /* Change color when clicked */
-}
-/* Service Heading Styles */
 .service-heading {
     text-align: center;
     margin: 30px 0 20px;
@@ -131,7 +119,6 @@ body.dark-mode .slide-arrow:hover {
     position: relative;
     padding-bottom: 10px;
 }
-
 .service-heading::after {
     content: '';
     position: absolute;
@@ -143,7 +130,6 @@ body.dark-mode .slide-arrow:hover {
     background-color: #6200ee;
 }
 
-/* Plan Styles */
 .plan-container {
     display: flex;
     overflow-x: auto;
@@ -151,13 +137,12 @@ body.dark-mode .slide-arrow:hover {
     -webkit-overflow-scrolling: touch;
     gap: 20px;
     padding: 20px;
-    position: relative; /* Needed for slide arrow positioning */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
 .plan-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
 }
 
 .plan {
@@ -166,18 +151,15 @@ body.dark-mode .slide-arrow:hover {
     border-radius: 8px;
     scroll-snap-align: start;
 }
-
 .plan h3 {
     margin-bottom: 10px;
     color: #bb86fc;
 }
-
 .plan p {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 15px;
 }
-
 .plan ul {
     list-style: none;
     padding: 0;
@@ -185,19 +167,16 @@ body.dark-mode .slide-arrow:hover {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 10px;
 }
-
 .plan li {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
     font-size: 0.9em;
 }
-
 .plan li i {
     margin-right: 8px;
     color: #6200ee;
 }
-
 .plan .btn {
     background-color: #6200ee;
     color: #e0e0e0;
@@ -208,11 +187,9 @@ body.dark-mode .slide-arrow:hover {
     margin-top: 15px;
     transition: background-color 0.3s ease;
 }
-
 .plan .btn:hover {
     background-color: #3700b3;
 }
-
 
 .psychometric {
     display: flex;
@@ -220,9 +197,7 @@ body.dark-mode .slide-arrow:hover {
     align-items: center;
     min-height: 60vh;
     margin-top: 50px;
-    /* No initial hiding or animation without JS */
 }
-
 .service-card.container {
     width: 100%;
     max-width: 100%;
@@ -231,24 +206,21 @@ body.dark-mode .slide-arrow:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-
 .psychometric-title {
     text-align: center;
     margin-bottom: 20px;
     color: #bb86fc;
     font-size: 2em;
 }
-
 .psychometric-iframe-container {
     overflow: hidden;
 }
-
 iframe {
     width: 100%;
     height: 520px;
     border: none;
 }
-/* Sliding Arrow Styles */
+
 .slide-arrow {
     display: none;
     position: absolute;
@@ -261,22 +233,17 @@ iframe {
     font-size: 1.2em;
     cursor: pointer;
     z-index: 1;
-   
 }
-
 .slide-arrow:hover {
     background-color: hsla(0, 0%, 100%, 0);
 }
-
 .slide-arrow.left {
     left: 10px;
 }
-
 .slide-arrow.right {
     right: 10px;
 }
 
-/* Popup Styles */
 .popup {
     position: fixed;
     top: 0;
@@ -289,11 +256,9 @@ iframe {
     align-items: center;
     z-index: 1000;
 }
-
 .popup.show {
     display: flex;
 }
-
 .popup-content {
     background-color: #2c2c2c;
     padding: 20px;
@@ -302,28 +267,49 @@ iframe {
     max-width: 600px;
     position: relative;
 }
-
 .popup .close-button {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: none;
+    background-color: #6200ee;  /* Add a background */
+    color: #ffffff;              /* Make icon/text white */
     border: none;
-    font-size: 1.5em;
-    color: #e0e0e0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 36px;
+    text-align: center;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Responsiveness */
+.popup .close-button:hover {
+    background-color: #bb86fc;
+    transform: scale(1.1);
+}
+
+
+/* ✅ Responsive Column Layout for Mobile */
 @media (max-width: 768px) {
     .plan-container {
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
         padding: 10px;
+        align-items: center;
     }
 
     .plan {
-        flex: 0 0 90%;
+        flex: 1 1 100%;
+        width: 100%;
+        margin-bottom: 20px;
+        scroll-snap-align: none;
     }
 
-    /* Show Stocks plan in mobile view */
-   
+    .slide-arrow {
+        display: none !important;
+    }
 }
