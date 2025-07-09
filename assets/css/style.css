@@ -219,6 +219,269 @@ body.active { overflow: hidden; }
   }
 }
 
+/* Styles for the pricing plans and related sections */
+.plan-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.plan-container::-webkit-scrollbar {
+    display: none;
+}
+
+.plan {
+    flex: 0 0 300px;
+    padding: 20px;
+    border-radius: 8px;
+    scroll-snap-align: start;
+}
+
+.plan h3 {
+    margin-bottom: 10px;
+    color: #bb86fc;
+}
+
+.plan p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.plan li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.plan li i {
+    margin-right: 8px;
+    color: #6200ee;
+}
+
+.plan .btn {
+    background-color: #6200ee;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.plan .btn:hover {
+    background-color: #3700b3;
+}
+
+.service-heading {
+    text-align: center;
+    margin: 30px 0 20px;
+    color: #bb86fc;
+    font-size: 1.8em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.service-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #6200ee;
+}
+
+.disclaimer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.disclaimer h2 {
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.disclaimer p {
+    color: #e0e0e0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.psychometric-test {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #6200ee;
+}
+
+.psychometric-test p {
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Dark mode specific styles for elements present in the HTML snippet */
+body.dark-mode .plan {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .service-heading {
+    color: #bb86fc;
+}
+
+/* --- IMPORTANT: Popup specific styles --- */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Main popup overlay is at z-index 1000 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative; /* CRITICAL for close button positioning */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: #e0e0e0;
+    z-index: 1005; /* Slightly higher than the main popup, but lower than button */
+}
+
+/* When the popup is shown, apply the transition for content */
+.popup.show .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.popup .close-button {
+    position: absolute;
+    top: -15px; /* Moved slightly outside the box for better visibility */
+    right: -15px; /* Moved slightly outside the box for better visibility */
+    background-color: #FF0000; /* Changed to bright red for clear visibility */
+    color: #ffffff;
+    border: 2px solid #ffffff; /* Added a white border */
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 32px; /* Adjusted line-height for vertical centering with border */
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7); /* Stronger shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    z-index: 1010; /* Highest z-index to ensure it's on top */
+}
+
+.popup .close-button:hover {
+    background-color: #CC0000; /* Darker red on hover */
+    transform: scale(1.1);
+    border-color: #cccccc; /* Slightly darker border on hover */
+}
+
+/* Styles for the content within the popup (optional, but good for consistency) */
+.popup-content h3 {
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.popup-content p,
+.popup-content li {
+    color: #e0e0e0;
+    margin-bottom: 5px;
+}
+
+.popup-content code {
+    background-color: #3a3a3a;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Responsive Column Layout for Mobile */
+@media (max-width: 768px) {
+    .plan-container {
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .plan {
+        flex: 1 1 100%;
+        width: 100%;
+        margin-bottom: 20px;
+        scroll-snap-align: none;
+    }
+
+    .slide-arrow {
+        display: none !important;
+    }
+
+    .popup-content {
+        width: 95%; /* Make popup content take more width on small screens */
+        padding: 15px; /* Reduce padding slightly */
+    }
+
+    .popup .close-button {
+        top: -10px; /* Adjust position for smaller screens */
+        right: -10px;
+        width: 30px; /* Slightly smaller button */
+        height: 30px;
+        font-size: 1.2em;
+        line-height: 26px; /* Adjust line-height */
+    }
+}
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
