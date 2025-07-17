@@ -6,11 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1167163659836917"
-    crossorigin="anonymous"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1577662195303747"
-    crossorigin="anonymous"></script>
-
   <title>Trading with JS Rao - Expert Trading Signals & Learning</title>
   <meta name="description"
     content="tradingwithjsrao expert trading signals and learn trading with JS Rao. We offer crypto, forex, stocks, and commodities trading insights." />
@@ -22,15 +17,116 @@
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/font/font.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <link rel="preload" as="image" href="./assets/images/loading.svg">
-  <link rel="preload" as="image" href="./assets/images/loading-circle.svg">
   <link rel="preload" as="image" href="./assets/images/hero-banner.webp">
   <link rel="preload" as="image" href="./assets/images/logo.png">
   <link rel="preload" as="image" href="./assets/images/menu.svg">
+  <link rel="preload" as="image" href="./assets/images/loading.svg">
+  <link rel="preload" as="image" href="./assets/images/loading-circle.svg">
+
+  <style>
+    /*
+        ##############################################################
+        #  IMPORTANT: PASTE YOUR MINIFIED CRITICAL CSS HERE.       #
+        #  This is just an example. You need to analyze your        #
+        #  'style.css' to find styles for elements visible on load  #
+        #  (header, hero section, preloader).                       #
+        #  Use a tool like 'critical' or extract manually.          #
+        ##############################################################
+    */
+    /* Minimal example of critical CSS (expand this significantly) */
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: hsl(0, 0%, 7%); /* --smokey-black */
+        color: hsl(0, 0%, 100%); /* --white */
+        font-family: "Gordita", sans-serif;
+        font-size: 1.6rem;
+        line-height: 2.15;
+    }
+    html {
+        font-size: 10px;
+        scroll-behavior: smooth;
+    }
+    .loading {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: hsl(0, 0%, 100%); /* --white */
+        z-index: 5;
+        transform-origin: bottom;
+        transition: 0.5s cubic-bezier(0.51, 0.03, 0.64, 0.28); /* var(--cubic-in) */
+        transition-delay: 0.5s;
+        display: flex; /* Ensure it centers content */
+        justify-content: center;
+        align-items: center;
+    }
+    .loading.loaded {
+        transform: scaleY(0);
+        pointer-events: none;
+    }
+    .loading img { display: block; } /* As per your img tag */
+    .loading .circle { animation: rotate360 1.5s linear infinite; }
+    @keyframes rotate360 {
+        0% { transform: translate(-50%, -50%) rotate(0); }
+        100% { transform: translate(-50%, -50%) rotate(1turn); }
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-block: 18px;
+        transition: 0.5s ease; /* var(--transition-2) */
+        z-index: 4;
+    }
+    .header.active {
+        background-color: hsl(0, 0%, 9%); /* --eerie-black */
+        padding-block: 12px;
+        box-shadow: 0 12px 30px -10px hsla(0, 0%, 14%, 0.1); /* var(--shadow) */
+    }
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 15px; /* from .container */
+    }
+    .logo img { display: block; }
+    .nav-open-btn { display: block; } /* From your nav-open-btn */
+    .hero {
+        padding-block-start: 120px;
+        text-align: center;
+    }
+    .hero-banner {
+        max-width: 150px;
+        margin-inline: auto;
+        margin-block-end: 20px;
+        display: block; /* Ensure image is block */
+    }
+    .h1 {
+        font-family: "Recoleta", serif;
+        line-height: 1.2;
+        font-size: 6rem; /* var(--fs-1) */
+        font-weight: 400; /* var(--fw-400) */
+        color: hsl(0, 0%, 100%); /* var(--white) */
+    }
+    /* Add more critical styles for hero-content, wrapper, hero-text, etc. */
+  </style>
+
+  <link rel="stylesheet" href="./assets/css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+
+  <link rel="stylesheet" href="./assets/font/font.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="./assets/font/font.css"></noscript>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1167163659836917"
+    crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1577662195303747"
+    crossorigin="anonymous"></script>
 
 </head>
 
@@ -152,7 +248,7 @@
 
           <picture>
             <source srcset="./assets/images/hero-banner.webp" type="image/webp">
-            <img src="./assets/images/hero-banner.png" width="322" height="322" alt="Portrait of JS Rao" class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="322" height="322" alt="Portrait of JS Rao" class="hero-banner" loading="eager">
           </picture>
 
           <div class="hero-content">
@@ -730,7 +826,7 @@
             class="abs-img abs-img-3" data-reveal>
         </picture>
         <picture>
-          <source srcset="./assets/images/footer-4.webp" type="image/webp">
+          <source srcset="./assets/images/footer-4.webp" type="image="webp">
           <img src="./assets/images/footer-4.png" width="175" height="175" loading="lazy" alt=""
             class="abs-img abs-img-4" data-reveal>
         </picture>
@@ -822,7 +918,33 @@
 
   <script>
     function openGmail() {
-      window.location.href = 'mailto:your-email@example.com?subject=Inquiry from Trading with JS Rao website';
+      // FIX: Use the correct email address
+      const recipient = "raojansher04@gmail.com";
+      const subject = "Inquiry from Trading with JS Rao website";
+      const body = ""; // You can pre-fill this if needed
+
+      const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const gmailWebUrl = `https://accounts.google.com/AccountChooser?continue=https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Attempt to open mailto first
+      const newWindow = window.open(mailtoUrl, '_blank');
+      if (newWindow) {
+        // Give mailto a moment. If the new window is still blank, try to redirect to webmail.
+        setTimeout(() => {
+          try {
+            if (newWindow.location.href === 'about:blank') {
+              newWindow.location.href = gmailWebUrl;
+            }
+          } catch (e) {
+            // This catches cross-origin errors if mailto successfully navigated but we can't check its URL.
+            // In this case, mailto likely worked. If not, fallback directly.
+            window.open(gmailWebUrl, '_blank');
+          }
+        }, 500);
+      } else {
+        // If window.open was blocked (e.g., by browser popup blocker), directly open webmail
+        window.open(gmailWebUrl, '_blank');
+      }
     }
   </script>
 
